@@ -165,7 +165,7 @@ def describe(items, show_methods=True, show_properties=True):
             else:
                 # Create the DummyClass subclass of mapper bases
                 # for detecting mapper own methods
-                suffix = '%s' % str(uuid.uuid4())
+                suffix = '%s' % str(uuid.uuid4()).replace('-', '_')
                 params = {
                     '__tablename__': 'dummy_table_%s' % suffix,
                     'dummy_id_col': Column(Integer, primary_key=True)
